@@ -3,11 +3,12 @@ const path = require("path");
 const crypto = require("crypto");
 const multerS3 = require('multer-s3')
 
+
 module.exports = {
-  dest: path.resolve(__dirname, "..", "..", "temp", "uploads"),
+  dest: path.resolve(__dirname, "..", "..", "public", "uploads"),
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.resolve(__dirname, "..", "..", "temp", "uploads"));
+      cb(null, path.resolve(__dirname, "..", "..", "public", "uploads"));
     },
     filename: (req, file, cb) => {
       crypto.randomBytes(16, (err, hash) => {
@@ -24,7 +25,6 @@ module.exports = {
   fileFilter: (req, file, cb) => {
     const allowedMimes = [
       "image/jpeg",
-      "image/pjpeg",
       "image/png",
       "image/gif",
       "image/jpg"
