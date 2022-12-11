@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.594.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^5.3.1",
     "mongoose": "^5.7.8",
     "morgan": "^1.9.1",
